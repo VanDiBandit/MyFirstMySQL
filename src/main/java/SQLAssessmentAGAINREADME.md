@@ -112,8 +112,8 @@ mysql> SELECT AVG(Runtime),Genre FROM moviesInTheatreNow WHERE IMDB_Score <7.5 G
 +--------------+--------+
 
 UPDATE moviesInTheatreNow
--> SET Rating = 'R'
--> WHERE Title = 'Starship Troopers';
+SET Rating = 'R'
+WHERE Title = 'Starship Troopers';
 Query OK, 1 row affected (0.01 sec)
 
 mysql> SELECT * FROM moviesInTheatreNow;
@@ -208,37 +208,24 @@ mysql> SELECT ID,Rating FROM moviesInTheatreNow WHERE Genre = 'Horror' OR Genre 
 +----+--------+
 2 rows in set (0.00 sec)
 
-mysql> SELECT MIN(IMDB_Score) FROM moviesInTheatreNOW;
-+-----------------+
-| MIN(IMDB_Score) |
-+-----------------+
-|             4.6 |
-+-----------------+
-1 row in set (0.01 sec)
+mysql> SELECT Rating,MAX(IMDB_Score), AVG(IMDB_Score), MIN(IMDB_Score) FROM moviesInTheatreNow GROUP BY Rating;
++--------+-----------------+-----------------+-----------------+
+| Rating | MAX(IMDB_Score) | AVG(IMDB_Score) | MIN(IMDB_Score) |
++--------+-----------------+-----------------+-----------------+
+| PG     |             9.0 |         6.90000 |             4.6 |
+| TV-14  |             4.7 |         4.70000 |             4.7 |
+| G      |             8.1 |         8.10000 |             8.1 |
+| PG-13  |             7.5 |         7.35000 |             7.2 |
++--------+-----------------+-----------------+-----------------+
+4 rows in set (0.00 sec)
 
-mysql> SELECT MAX(IMDB_Score) FROM moviesInTheatreNOW;
-+-----------------+
-| MAX(IMDB_Score) |
-+-----------------+
-|             9.0 |
-+-----------------+
-1 row in set (0.00 sec)
-
-mysql> SELECT AVG(IMDB_Score) FROM moviesInTheatreNOW;
-+-----------------+
-| AVG(IMDB_Score) |
-+-----------------+
-|         7.02500 |
-+-----------------+
-1 row in set (0.00 sec)
-
-SELECT MAX(IMDB_Score), AVG(IMDB_Score), MIN(IMDB_Score) FROM moviesInTheatreNow GROUP BY Rating HAVING COUNT(*)>1;
-+-----------------+-----------------+-----------------+
-| MAX(IMDB_Score) | AVG(IMDB_Score) | MIN(IMDB_Score) |
-+-----------------+-----------------+-----------------+
-|             9.0 |         6.90000 |             4.6 |
-|             7.5 |         7.35000 |             7.2 |
-+-----------------+-----------------+-----------------+
+SELECT Rating,MAX(IMDB_Score), AVG(IMDB_Score), MIN(IMDB_Score) FROM moviesInTheatreNow GROUP BY Rating HAVING COUNT(*)>1;
++--------+-----------------+-----------------+-----------------+
+| Rating | MAX(IMDB_Score) | AVG(IMDB_Score) | MIN(IMDB_Score) |
++--------+-----------------+-----------------+-----------------+
+| PG     |             9.0 |         6.90000 |             4.6 |
+| PG-13  |             7.5 |         7.35000 |             7.2 |
++--------+-----------------+-----------------+-----------------+
 2 rows in set (0.00 sec)
 
 mysql> DELETE FROM moviesInTheatreNow WHERE Rating = 'R';
@@ -254,9 +241,8 @@ mysql> SELECT * FROM moviesInTheatreNow;
 | Monsters Inc.              |      92 | Animation     |        8.1 | G      |
 | Scott Pilgrim Vs The World |     112 | Comedy/Action |        7.5 | PG-13  |
 | Spaceballs                 |      96 | Comedy        |        7.1 | PG     |
-| Starship Troopers          |     129 | Sci-Fi        |        7.2 | PG-13  |
 +----------------------------+---------+---------------+------------+--------+
-7 rows in set (0.00 sec)
+6 rows in set (0.00 sec)
 
 mysql> drop table moviesInTheatreNow;
 Query OK, 0 rows affected (0.02 sec)
