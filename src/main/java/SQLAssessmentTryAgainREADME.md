@@ -1,3 +1,5 @@
+```
+
 mysql> create database NewMovies;
 Query OK, 1 row affected (0.01 sec)
 
@@ -249,3 +251,5 @@ Query OK, 0 rows affected (0.02 sec)
 
 mysql> drop database NewMovies;
 Query OK, 0 rows affected (0.02 sec)
+
+```
