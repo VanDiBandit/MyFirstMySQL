@@ -1,0 +1,90 @@
+What Is a Database?
+-A database is an organized collection of structured information, or data,
+typically stored electronically in a computer system.
+-Data in the databases is created in rows and columns in a series of tables
+making it easy to process and query
+-Almost all databases are structure query language(SQL) for writing and querying data.
+
+
+What is Structured Query Language (SQL)?
+-SQL is a programming language used by nearly all relational databases to query,
+manipulate, and define data, and to provide access control.
+-
+
+What’s the difference between a database and a spreadsheet?
+-The primary differences between the two are:
+
+ How the data is stored and manipulated
+ Who can access the data
+ How much data can be stored
+
+-Spreadsheets were designed for 1 user, good for a single user
+or small number of users that don't need to do incredibly complicated data manipulation
+-Databases were made to hold larger collections of organized information
+-Databases also allow multiple users at the same time to quickly and securely access and query
+data using complex logic and language
+
+Types of databases
+-Relational Databases -Relational databases are based on the relational model, an intuitive,
+straightforward way of representing data in tables.
+In a relational database, each row in the table is a record with a unique ID called the key
+
+-Object-oriented databases - is represented in the form of objects, as in object-oriented programming.
+
+-Distributed Databases- A distributed database consists of two or more files located in different sites.
+The database may be stored on multiple computers, located in the same physical location, or scattered over
+different networks.
+
+-Data warehouses - Central repository, type of database may be stored on multiple computers, located in same physical
+location or scattered over different networks
+
+-Data warehouses - A central repository for data, a data warehouse is a type of database specifically designed for fast query and analysis.
+
+-NoSQL databases - or nonrelational database, allows unstructured and semistructured data to be stored and manipulated
+(in contrast to a relational database, which defines how all data inserted into the database must be composed).
+
+-Graph Databases - A graph database stores data in terms of entities and the relationships between entities.
+
+-OLTP databases -  An OLTP database is a speedy, analytic database designed for large numbers of
+transactions performed by multiple users.
+
+Latest databases:
+Open source databases
+An open source database system is one whose source code is open source;
+such databases could be SQL or NoSQL databases.
+
+Cloud databases
+A cloud database is a collection of data, either structured or unstructured,
+that resides on a private, public, or hybrid cloud computing platform.
+There are two types of cloud database models: traditional and database as a service (DBaaS).
+With DBaaS, administrative tasks and maintenance are performed by a service provider.
+
+Multimodel database
+Multimodel databases combine different types of database models into a single, integrated back end.
+This means they can accommodate various data types.
+
+Document/JSON database
+Designed for storing, retrieving, and managing document-oriented information, document databases are a
+modern way to store data in JSON format rather than rows and columns.
+
+What is database software?
+-Database software is used to create, edit, and maintain database files and records, enabling easier file
+and record creation, data entry, data editing, updating, and reporting. The software also handles data
+storage, backup and reporting, multi-access control, and security
+
+What is a database management system (DBMS)?
+-A DBMS serves as an interface between the database and its end users or programs, allowing users to retrieve,
+update, and manage how the information is organized and optimized. A DBMS also facilitates oversight and control
+of databases, enabling a variety of administrative operations such as performance monitoring, tuning, and backup and recovery.
+
+What is a MySQL database?
+-MySQL is an open source relational database management system based on SQL. It was designed and optimized for web applications
+and can run on any platform.
+
+Database challenges
+-absorbing significant increases in data volume
+-Ensuring data security
+-Keeping up with demand
+-Managing and maintaining the database infrastructure
+-Removing limits on scalability
+-Ensuring data residency, data soveriegnty, latency requirements
